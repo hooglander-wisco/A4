@@ -1,0 +1,447 @@
+/* a4stylesheet.css
+   A4: Intro CSS Fill-in Template
+   Instructions: rename this file to styles.css and complete each TODO block.
+*/
+
+
+
+
+
+/* ===== Base styles (mostly done) ===== */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  color: #222;
+  background: #fff;
+}
+
+a { color: inherit; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.container {
+  width: min(1000px, 92%);
+  margin: 0 auto;
+}
+
+/* ===== Header ===== */
+.site-header {
+  border-bottom: 1px solid #eee;
+  background: #fff;
+  position: relative;
+  z-index:10;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 18px 0;
+  flex-wrap: wrap;
+  /* TODO A (Flexbox):
+     Make the brand appear on the left and the navigation on the right.
+     Requirements:
+       - Use flexbox
+       - Center items vertically
+       - Put space between left and right
+  */
+}
+.highlighted-heading {
+  background-color: rgb(224, 235, 236);
+  padding: 4px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+hr {
+    height: 5px;
+    border: none;
+    background-color: hsl(200, 10%, 24%);
+    margin: 0;
+    padding: 0;
+}
+
+.brand {
+  font-size: 28px;
+  font-weight: 700;
+  color: #263238;
+  white-space: nowrap;
+}
+
+.brand .dot {
+  color:#3a88a8;
+  /* TODO B (Color):
+     Make the dot a light blue accent color (choose a readable blue).
+  */
+}
+
+.site-nav a {
+  margin-left: 18px;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: #444;
+}
+
+.site-nav a:hover {
+  color: #3a88a8;
+  text-decoration: none;
+}
+
+
+
+
+
+
+
+/* ===== Hero ===== */
+.hero {
+  background:
+    linear-gradient(
+      rgba(20, 37, 47, 0.48),
+      rgba(20, 37, 47, 0.48)
+    ),
+    url("https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1600&q=60");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  /* TODO C (Background image hero):
+     Turn this into a hero banner with a background image.
+     Requirements:
+       - Use a background image URL (use the one below)
+       - Make it cover the area and center it
+       - Add a light overlay so text is readable (hint: use a linear-gradient + image)
+       - Set a minimum height (e.g., 360px)
+  */
+  /* My image:
+     https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1600&q=60
+  */
+}
+
+.hero-content {
+  width: min(1000px, 92%);
+  margin: 0 auto;
+  padding: 90px 20px;
+  text-align: center;
+  /* TODO D (Center content):
+     Center the hero text horizontally.
+     Add vertical padding so it doesn't feel cramped.
+  */
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(34px, 5vw, 48px);
+  line-height: 1.15;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  /* TODO E (Typography):
+     Make the headline large and uppercase.
+     (e.g., font-size around 42–48px, text-transform uppercase)
+  */
+}
+
+.hero-subhead {
+  margin: 6px 0 22px;
+  font-size: clamp(18px, 2.5vw, 23px);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  color: #edf5f8;
+  /* TODO F (Typography):
+     Make this slightly smaller than h1 and a softer color.
+     (e.g., font-size ~20–24px; color #555)
+  */
+}
+
+
+
+
+
+
+/* ===== Buttons ===== */
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 3px;
+  font-size: 14px;
+}
+
+.btn-dark {
+  background: #263238;
+  color: #ffffff;
+  border-color: #263238;
+  /* TODO G (Button styling):
+     Make this a dark filled button with white text.
+     (e.g., background #333; color #fff)
+  */
+}
+
+.btn-outline {
+   background: transparent;
+  border: 2px solid #3a88a8;
+  color: #3a88a8;
+  /* TODO H (Button styling):
+     Make this an outlined button with a blue border and matching text.
+     (e.g., border: 2px solid ...; color: ...; background: transparent)
+  */
+}
+
+.btn-outline:hover {
+  background: #3a88a8;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* ===== Features (3 columns) ===== */
+.features {
+  padding: 42px 0;
+  background: #ffffff;
+}
+
+.features-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 26px;
+}
+
+.feature {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+  padding: 20px 16px;
+}
+
+.features {
+  padding: 42px 0;
+  background: #ffffff;
+
+}
+
+.features-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 26px;
+  /* TODO I (Layout):
+     Arrange the three feature blocks in a row (desktop).
+     Requirements:
+       - Use flexbox
+       - Add a gap between items (e.g., 26px)
+  */
+}
+
+.feature {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+  padding: 20px 16px;
+  /* TODO J (Sizing / alignment):
+     Make each feature take equal width and center its text.
+  */
+}
+
+.icon {
+  width: 56px;
+  height: 56px;
+  border: 2px solid #ddd;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 12px;
+  color: #666;
+  font-size: 22px;
+}
+
+/* ===== Featured content ===== */
+.featured {
+  padding: 42px 0 36px;
+  background: #f7f7f7;
+}
+
+.section-title {
+  text-align: center;
+  margin: 0;
+  font-size: 18px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.section-lede {
+  text-align: center;
+  max-width: 680px;
+  margin: 10px auto 22px;
+  color: #666;
+  font-size: 13px;
+}
+
+.media {
+
+  height: auto;
+  width: auto;
+  display: grid;
+  place-items: center;
+  object-fit: contain;
+}
+
+
+
+
+
+
+/* ===== Secondary content (2 cards) ===== */
+.secondary {
+  padding: 10 px ;
+}
+
+.secondary-grid {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 50% text, 50% image side-by-side */
+  align-items: stretch;
+  flex: 1;
+  min-width: 0;
+  border: 1px solid #e0e8ec;
+  border-radius: 5px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 4px 14px rgba(38, 50, 56, 0.04);
+}
+
+
+
+.card-text {
+  padding: 18px;
+  min-width: 0;
+} 
+
+.card-text h3 {
+  margin: 0 0 8px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.card-text p {
+    padding:14px;
+    min-width: 0;
+  margin: 0 0 14px;
+  color: #666;
+  font-size: 13px;
+}
+
+.card-image {
+    min-width: 150px;
+  min-height: 200px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* TODO M (Image block):
+     Make the card image behave like a background image:
+       - cover
+       - centered
+  */
+}
+.card-image {
+  min-width: 0;
+  min-height: 140px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Optional images (already provided) */
+.img-a {
+  background-image: url("https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=60");
+}
+.img-b {
+  background-image: url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=60");
+}
+
+/* ===== CTA ===== */
+.cta {
+  background: #f7f7f7;
+  padding: 42px 0;
+}
+
+.cta-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  text-align: center;
+  /* TODO N (Center CTA):
+     Center the CTA text and button.
+  */
+}
+
+
+
+
+
+/* ===== Footer ===== */
+.site-footer {
+  background: #fafafa;
+  border-top: 1px solid #eee;
+  padding: 24px 0;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  /* TODO O (Footer layout):
+     Arrange footer-left on the left and footer link columns on the right.
+     Requirements:
+       - Use flexbox
+       - Add a gap (e.g., 24px)
+       - Space items out (left/right)
+  */
+}
+
+.footer-left {
+  max-width: 360px;
+  color: #666;
+  font-size: 12px;
+}
+
+.footer-left a { color: #3a88a8; }
+
+.footer-cols {
+  display: flex;
+  gap: 28px;
+}
+
+.footer-col h4 {
+  margin: 0 0 8px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.footer-col a {
+  display: block;
+  font-size: 12px;
+  color: #666;
+  margin: 6px 0;
+}
